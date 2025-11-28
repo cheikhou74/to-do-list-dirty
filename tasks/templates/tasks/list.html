@@ -56,6 +56,12 @@
 		<input class="btn btn-info" type="submit" name="Create Task">
 	</form>
 
+    <div style="position: fixed; bottom: 10px; right: 10px;">
+    		Version {{ version }}
+    </div>
+
+
+
 	<div class="todo-list">
 	{% for task in tasks %}
 		<div class="item-row">
@@ -68,6 +74,10 @@
 			{% endif %}
 
 		</div>
+
+		<div style="position: fixed; bottom: 10px; right: 10px;">
+    		Version {{ version }}
+        </div>
 	{% endfor %}
 	</div>
 </div>
