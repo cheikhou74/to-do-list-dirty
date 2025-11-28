@@ -1,0 +1,36 @@
+# Created by venv; see https://docs.python.org/3/library/venv.html
+*
+# Django
+*.sqlite3
+*.pyc
+__pycache__/
+*.log
+local_settings.py
+db.sqlite3
+
+# Environnements virtuels
+.env
+.venv
+venv/
+env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Archives
+*.zip
+*.tar.gz
+
+# Fichiers de cache Python
+.python-version
+
+# Fichiers de base de données
+*.db
+*.sqlite3
