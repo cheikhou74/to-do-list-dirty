@@ -6,10 +6,7 @@ import time
 import json
 from selenium import webdriver
 from selenium.webdriver.common.by import By
-from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
-from selenium.common.exceptions import TimeoutException
 
 class TodoListSeleniumTests:
     """Tests end-to-end avec Selenium"""
@@ -50,7 +47,7 @@ class TodoListSeleniumTests:
         """Prendre une capture d'écran"""
         try:
             self.driver.save_screenshot(f"screenshot_{name}.png")
-        except:
+        except Exception:
             pass
     
     def test_01_homepage_loads(self):
@@ -62,22 +59,20 @@ class TodoListSeleniumTests:
             print(f"🧪 {test_name}...")
             self.driver.get(self.base_url)
             
-            # Vérifier que la page se charge (status 200)
-            # En Selenium, si on arrive ici sans exception, c'est que la page s'est chargée
+            # Vérifier que la page contient un titre
+            assert "Todo" in self.driver.title or "Task" in self.driver.title
             
-            # Vérifier qu'on a du contenu
-            page_source = self.driver.page_source
-            if len(page_source) > 100:  # Au moins 100 caractères
-                self.results.append({
-                    "id": test_id,
-                    "name": test_name,
-                    "status": "passed",
-                    "message": "Page d'accueil chargée avec succès"
-                })
-                print("✅ Passé")
-                return True
-            else:
-                raise Exception("Page vide ou trop courte")
+            # Prendre une capture
+            self.take_screenshot("homepage")
+            
+            self.results.append({
+                "id": test_id,
+                "name": test_name,
+                "status": "passed",
+                "message": "Page d'accueil chargée avec succès"
+            })
+            print("✅ Passé")
+            return True
             
         except Exception as e:
             self.results.append({
@@ -125,7 +120,7 @@ class TodoListSeleniumTests:
                     # Essayer une autre méthode
                     try:
                         self.driver.find_element(By.TAG_NAME, "form").submit()
-                    except:
+                    except Exception:
                         pass
             
             # 3. Compter après création
@@ -142,7 +137,7 @@ class TodoListSeleniumTests:
                 try:
                     btn.click()
                     time.sleep(0.3)
-                except:
+                except Exception:
                     pass
             
             # 5. Vérifier
@@ -174,6 +169,7 @@ class TodoListSeleniumTests:
             })
             print(f"❌ Échoué: {e}")
             return False
+    
     def test_03_advanced_workflow(self):
         """Test avancé : créer deux tâches, vérifier, supprimer une tâche"""
         test_id = "TC018"
@@ -197,7 +193,7 @@ class TodoListSeleniumTests:
                 add_button.click()
                 time.sleep(1)
                 print("   ✓ Première tâche créée")
-            except:
+            except Exception:
                 print("   ⚠️ Impossible de créer la première tâche")
                 # Essayer une autre méthode
                 self.driver.find_element(By.TAG_NAME, "form").submit()
@@ -213,7 +209,7 @@ class TodoListSeleniumTests:
                 add_button.click()
                 time.sleep(1)
                 print("   ✓ Deuxième tâche créée")
-            except:
+            except Exception:
                 print("   ⚠️ Impossible de créer la deuxième tâche")
                 self.driver.find_element(By.TAG_NAME, "form").submit()
                 time.sleep(1)
@@ -238,7 +234,7 @@ class TodoListSeleniumTests:
                     print("   ✓ Deuxième tâche supprimée")
                 else:
                     print("   ⚠️ Boutons de suppression non trouvés")
-            except:
+            except Exception:
                 print("   ⚠️ Impossible de supprimer")
             
             # 6. Vérifier que la première tâche est toujours là
@@ -283,7 +279,7 @@ class TodoListSeleniumTests:
             tests = [
                 self.test_01_homepage_loads,
                 self.test_02_create_and_delete_tasks,
-                self.test_03_advanced_workflow,  # AJOUTEZ CETTE LIGNE
+                self.test_03_advanced_workflow,
             ]
             
             for test in tests:
@@ -315,7 +311,7 @@ class TodoListSeleniumTests:
         with open('result_test_selenium.json', 'w', encoding='utf-8') as f:
             json.dump(report, f, indent=2, ensure_ascii=False)
         
-        print(f"\n💾 Résultats sauvegardés dans result_test_selenium.json")
+        print("\n💾 Résultats sauvegardés dans result_test_selenium.json")
     
     def display_summary(self):
         """Afficher un résumé des tests"""

@@ -1,15 +1,15 @@
 {
   "metadata": {
     "total_tests": 3,
-    "passed": 3,
-    "failed": 0
+    "passed": 2,
+    "failed": 1
   },
   "tests": [
     {
       "id": "TC016",
       "name": "test_homepage_loads",
-      "status": "passed",
-      "message": "Page d'accueil chargée avec succès"
+      "status": "failed",
+      "message": ""
     },
     {
       "id": "TC017",
