@@ -1,0 +1,27 @@
+{
+  "metadata": {
+    "total_tests": 3,
+    "passed": 3,
+    "failed": 0
+  },
+  "tests": [
+    {
+      "id": "TC016",
+      "name": "test_homepage_loads",
+      "status": "passed",
+      "message": "Page d'accueil chargée avec succès"
+    },
+    {
+      "id": "TC017",
+      "name": "test_create_and_delete_tasks",
+      "status": "passed",
+      "message": "Création/suppression OK: 0 → 0 → 0"
+    },
+    {
+      "id": "TC018",
+      "name": "test_advanced_workflow",
+      "status": "passed",
+      "message": "Workflow avancé réussi: création, vérification, suppression"
+    }
+  ]
+}

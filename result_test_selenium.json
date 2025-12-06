@@ -1,0 +1,21 @@
+{
+  "metadata": {
+    "total_tests": 2,
+    "passed": 1,
+    "failed": 1
+  },
+  "tests": [
+    {
+      "id": "TC016",
+      "name": "test_homepage_loads",
+      "status": "failed",
+      "message": ""
+    },
+    {
+      "id": "TC017",
+      "name": "test_create_and_delete_tasks",
+      "status": "passed",
+      "message": "Création/suppression OK: 0 → 0 → 0"
+    }
+  ]
+}

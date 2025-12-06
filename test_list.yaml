@@ -1,0 +1,46 @@
+tests:
+  - id: "TC001"
+    name: "Accès page d'accueil"
+    type: "auto-unittest"
+    
+  - id: "TC002"
+    name: "Template correct"
+    type: "auto-unittest"
+    
+  - id: "TC003"
+    name: "Test basique"
+    type: "auto-unittest"
+    
+  - id: "TC004"
+    name: "Test UX"
+    type: "manuel"
+    
+  - id: "TC005"
+    name: "Test responsive"
+    type: "manuel"
+    
+  - id: "TC016"
+    name: "Workflow complet création/suppression"
+    type: "auto-selenium"  # CHANGÉ de "manuel" à "auto-selenium"
+    description: "Se connecter à l'application, compter le nombre de tâche, créer 10 tâches, supprimer 10 tâches et compter à nouveau le nombre de tâche"
+    category: "Workflow"
+    priority: "Haute"
+    steps:
+      - "Ouvrir http://127.0.0.1:8000"
+      - "Compter le nombre de tâches initial"
+      - "Créer 10 tâches via le formulaire"
+      - "Compter le nombre de tâches après création"
+      - "Supprimer les 10 tâches"
+      - "Compter le nombre de tâches final"
+    expected_results:
+      - "Nombre initial = N"
+      - "Nombre après création = N + 10"
+      - "Nombre final = N"
+
+      - id: "TC017"
+        name: "Test E2E Selenium avancé"
+        type: "auto-selenium"
+        description: "Ajout d'une tâche, détection de son ID, ajout d'une autre tâche, suppression de la dernière, vérification que la première est toujours présente"
+        category: "Workflow"
+        priority: "Haute"    
+  # ... continuez jusqu'à TC015

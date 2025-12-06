@@ -1,0 +1,44 @@
+{
+  "metadata": {
+    "total_tests": 7,
+    "passed": 7,
+    "failed": 0
+  },
+  "tests": [
+    {
+      "id": "TC001",
+      "name": "test_home_page_status",
+      "status": "passed"
+    },
+    {
+      "id": "TC002",
+      "name": "test_home_page_uses_correct_template",
+      "status": "passed"
+    },
+    {
+      "id": "TC003",
+      "name": "test_basic_math",
+      "status": "passed"
+    },
+    {
+      "id": "TC004",
+      "name": "test_create_simple_task",
+      "status": "passed"
+    },
+    {
+      "id": "TC005",
+      "name": "test_task_completion",
+      "status": "passed"
+    },
+    {
+      "id": "TC006",
+      "name": "test_task_str_method",
+      "status": "passed"
+    },
+    {
+      "id": "TC007",
+      "name": "test_order_display",
+      "status": "passed"
+    }
+  ]
+}
