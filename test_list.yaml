@@ -43,4 +43,92 @@ tests:
         description: "Ajout d'une tâche, détection de son ID, ajout d'une autre tâche, suppression de la dernière, vérification que la première est toujours présente"
         category: "Workflow"
         priority: "Haute"    
+
+      - id: "TC018"
+        name: "Test E2E Selenium avancé"
+        type: "auto-selenium"
+        description: "Créer deux tâches, vérifier leur présence, supprimer une tâche, vérifier que l'autre est toujours présente"
+        category: "Workflow"
+        priority: "Haute"
+
+        # Tests pour la fonctionnalité de priorité (TDD/ATDD)
+  - id: "TC019"
+    name: "Création tâche prioritaire"
+    type: "auto-unittest"
+    description: "Tester la création d'une tâche marquée comme prioritaire"
+    category: "Priorité"
+    priority: "Haute"
+    steps:
+      - "Créer une tâche avec is_priority=True"
+      - "Vérifier que la tâche est sauvegardée"
+      - "Vérifier que is_priority est True"
+    expected_results:
+      - "La tâche est créée avec succès"
+      - "Le champ is_priority est à True"
+
+  - id: "TC020"
+    name: "Tâche par défaut non prioritaire"
+    type: "auto-unittest"
+    description: "Vérifier qu'une tâche créée sans spécifier la priorité n'est pas prioritaire par défaut"
+    category: "Priorité"
+    priority: "Moyenne"
+    steps:
+      - "Créer une tâche sans spécifier is_priority"
+      - "Vérifier la valeur de is_priority"
+    expected_results:
+      - "is_priority est False par défaut"
+
+  - id: "TC021"
+    name: "Mise à jour en tâche prioritaire"
+    type: "auto-unittest"
+    description: "Tester la mise à jour d'une tâche existante en prioritaire"
+    category: "Priorité"
+    priority: "Haute"
+    steps:
+      - "Créer une tâche normale"
+      - "Mettre à jour is_priority à True"
+      - "Vérifier la mise à jour"
+    expected_results:
+      - "La tâche est correctement mise à jour"
+      - "is_priority est maintenant True"
+
+  - id: "TC022"
+    name: "Tri par priorité"
+    type: "auto-unittest"
+    description: "Vérifier que les tâches prioritaires apparaissent en premier"
+    category: "Priorité"
+    priority: "Haute"
+    steps:
+      - "Créer 2 tâches normales et 2 tâches prioritaires"
+      - "Récupérer les tâches triées par priorité"
+      - "Vérifier l'ordre"
+    expected_results:
+      - "Les 2 premières tâches sont prioritaires"
+      - "Les 2 dernières sont normales"
+
+  - id: "TC023"
+    name: "Test E2E - Fonctionnalité priorité"
+    type: "auto-selenium"
+    description: "Tester la création de tâches prioritaires et leur affichage en premier"
+    category: "Priorité"
+    priority: "Haute"
+    steps:
+      - "Créer une tâche normale"
+      - "Créer une tâche prioritaire"
+      - "Vérifier que la tâche prioritaire apparaît en premier"
+    expected_results:
+      - "Les tâches sont créées"
+      - "La tâche prioritaire est en première position"
+
+  - id: "TC024"
+    name: "Test E2E - Indicateur visuel"
+    type: "auto-selenium"
+    description: "Vérifier la présence d'un indicateur visuel pour les tâches prioritaires"
+    category: "Priorité"
+    priority: "Moyenne"
+    steps:
+      - "Créer une tâche prioritaire"
+      - "Chercher un indicateur visuel (étoile, badge, couleur)"
+    expected_results:
+      - "Un indicateur visuel est présent pour les tâches prioritaires"
   # ... continuez jusqu'à TC015

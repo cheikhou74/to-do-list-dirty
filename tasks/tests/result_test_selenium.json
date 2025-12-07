@@ -1,8 +1,8 @@
 {
   "metadata": {
-    "total_tests": 3,
-    "passed": 2,
-    "failed": 1
+    "total_tests": 5,
+    "passed": 1,
+    "failed": 4
   },
   "tests": [
     {
@@ -15,13 +15,25 @@
       "id": "TC017",
       "name": "test_create_and_delete_tasks",
       "status": "passed",
-      "message": "Création/suppression OK: 0 → 0 → 0"
+      "message": "Création/suppression OK: 66 → 66 → 66"
     },
     {
       "id": "TC018",
       "name": "test_advanced_workflow",
-      "status": "passed",
-      "message": "Workflow avancé réussi: création, vérification, suppression"
+      "status": "failed",
+      "message": "Message: no such element: Unable to locate element: {\"method\":\"tag name\",\"selector\":\"form\"}\n  (Session info: chrome=131.0.6778.86); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception\nStacktrace:\n\tGetHandleVerifier [0x00007FF7919C80D5+2992373]\n\t(No symbol) [0x00007FF79165BFD0]\n\t(No symbol) [0x00007FF7914F590A]\n\t(No symbol) [0x00007FF79154926E]\n\t(No symbol) [0x00007FF79154955C]\n\t(No symbol) [0x00007FF7915927D7]\n\t(No symbol) [0x00007FF79156F3AF]\n\t(No symbol) [0x00007FF79158F584]\n\t(No symbol) [0x00007FF79156F113]\n\t(No symbol) [0x00007FF79153A918]\n\t(No symbol) [0x00007FF79153BA81]\n\tGetHandleVerifier [0x00007FF791A26A2D+3379789]\n\tGetHandleVerifier [0x00007FF791A3C32D+3468109]\n\tGetHandleVerifier [0x00007FF791A30043+3418211]\n\tGetHandleVerifier [0x00007FF7917BC78B+847787]\n\t(No symbol) [0x00007FF79166757F]\n\t(No symbol) [0x00007FF791662FC4]\n\t(No symbol) [0x00007FF79166315D]\n\t(No symbol) [0x00007FF791652979]\n\tBaseThreadInitThunk [0x00007FFCF652E8D7+23]\n\tRtlUserThreadStart [0x00007FFCF6DAC53C+44]\n"
+    },
+    {
+      "id": "TC023",
+      "name": "test_priority_feature",
+      "status": "failed",
+      "message": "'TodoListSeleniumTests' object has no attribute '_create_task'"
+    },
+    {
+      "id": "TC024",
+      "name": "test_priority_visual_indicator",
+      "status": "failed",
+      "message": "'TodoListSeleniumTests' object has no attribute '_create_task'"
     }
   ]
 }
