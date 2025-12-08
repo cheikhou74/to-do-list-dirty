@@ -1,0 +1,211 @@
+{
+  "timestamp": "2025-12-08 10:23:32",
+  "urls_tested": [
+    "http://localhost:8000/",
+    "http://localhost:8000/create/"
+  ],
+  "violations": [
+    {
+      "description": "Ensures the page has only one main landmark and each iframe in the page has at most one main landmark",
+      "help": "Page must have one main landmark",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/3.1/landmark-one-main?application=axeAPI",
+      "id": "landmark-one-main",
+      "impact": "moderate",
+      "nodes": [
+        {
+          "all": [
+            {
+              "data": null,
+              "id": "page-has-main",
+              "impact": "moderate",
+              "message": "Page does not have a main landmark",
+              "relatedNodes": []
+            }
+          ],
+          "any": [],
+          "failureSummary": "Fix all of the following:\n  Page does not have a main landmark",
+          "html": "<html dir=\"ltr\" lang=\"fr\">",
+          "impact": "moderate",
+          "none": [],
+          "target": [
+            "html"
+          ]
+        }
+      ],
+      "tags": [
+        "cat.semantics",
+        "best-practice"
+      ]
+    },
+    {
+      "description": "Ensures all page content is contained by landmarks",
+      "help": "All page content must be contained by landmarks",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/3.1/region?application=axeAPI",
+      "id": "region",
+      "impact": "moderate",
+      "nodes": [
+        {
+          "all": [],
+          "any": [
+            {
+              "data": null,
+              "id": "region",
+              "impact": "moderate",
+              "message": "Some page content is not contained by landmarks",
+              "relatedNodes": [
+                {
+                  "html": "<h1>Votre connexion n'est pas priv\u00e9e</h1>",
+                  "target": [
+                    "h1"
+                  ]
+                },
+                {
+                  "html": "<p>Des pirates informatiques tentent peut-\u00eatre de voler vos informations sur <strong>localhost</strong> (mots de passe, messages ou cartes de cr\u00e9dit, par exemple). <a href=\"#\" id=\"learn-more-link\">En savoir plus sur cet avertissement</a></p>",
+                  "target": [
+                    "#main-message > p"
+                  ]
+                },
+                {
+                  "html": "<div id=\"error-code\" class=\"error-code\" role=\"button\" aria-expanded=\"false\">net::ERR_CERT_AUTHORITY_INVALID</div>",
+                  "target": [
+                    "#error-code"
+                  ]
+                },
+                {
+                  "html": "<div><a href=\"#\" id=\"enhanced-protection-link\">Activez la protection renforc\u00e9e</a> pour b\u00e9n\u00e9ficier du plus haut niveau de s\u00e9curit\u00e9 de Chrome</div>",
+                  "target": [
+                    "label > div:nth-child(2)"
+                  ]
+                },
+                {
+                  "html": "<button id=\"primary-button\">Revenir en lieu s\u00fbr</button>",
+                  "target": [
+                    "#primary-button"
+                  ]
+                },
+                {
+                  "html": "<button id=\"details-button\" class=\"secondary-button small-link\" aria-expanded=\"false\">\n        Param\u00e8tres avanc\u00e9s\n      </button>",
+                  "target": [
+                    "#details-button"
+                  ]
+                }
+              ]
+            }
+          ],
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks",
+          "html": "<html dir=\"ltr\" lang=\"fr\">",
+          "impact": "moderate",
+          "none": [],
+          "target": [
+            "html"
+          ]
+        }
+      ],
+      "tags": [
+        "cat.keyboard",
+        "best-practice"
+      ]
+    },
+    {
+      "description": "Ensures the page has only one main landmark and each iframe in the page has at most one main landmark",
+      "help": "Page must have one main landmark",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/3.1/landmark-one-main?application=axeAPI",
+      "id": "landmark-one-main",
+      "impact": "moderate",
+      "nodes": [
+        {
+          "all": [
+            {
+              "data": null,
+              "id": "page-has-main",
+              "impact": "moderate",
+              "message": "Page does not have a main landmark",
+              "relatedNodes": []
+            }
+          ],
+          "any": [],
+          "failureSummary": "Fix all of the following:\n  Page does not have a main landmark",
+          "html": "<html dir=\"ltr\" lang=\"fr\">",
+          "impact": "moderate",
+          "none": [],
+          "target": [
+            "html"
+          ]
+        }
+      ],
+      "tags": [
+        "cat.semantics",
+        "best-practice"
+      ]
+    },
+    {
+      "description": "Ensures all page content is contained by landmarks",
+      "help": "All page content must be contained by landmarks",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/3.1/region?application=axeAPI",
+      "id": "region",
+      "impact": "moderate",
+      "nodes": [
+        {
+          "all": [],
+          "any": [
+            {
+              "data": null,
+              "id": "region",
+              "impact": "moderate",
+              "message": "Some page content is not contained by landmarks",
+              "relatedNodes": [
+                {
+                  "html": "<h1>Votre connexion n'est pas priv\u00e9e</h1>",
+                  "target": [
+                    "h1"
+                  ]
+                },
+                {
+                  "html": "<p>Des pirates informatiques tentent peut-\u00eatre de voler vos informations sur <strong>localhost</strong> (mots de passe, messages ou cartes de cr\u00e9dit, par exemple). <a href=\"#\" id=\"learn-more-link\">En savoir plus sur cet avertissement</a></p>",
+                  "target": [
+                    "#main-message > p"
+                  ]
+                },
+                {
+                  "html": "<div id=\"error-code\" class=\"error-code\" role=\"button\" aria-expanded=\"false\">net::ERR_CERT_AUTHORITY_INVALID</div>",
+                  "target": [
+                    "#error-code"
+                  ]
+                },
+                {
+                  "html": "<div><a href=\"#\" id=\"enhanced-protection-link\">Activez la protection renforc\u00e9e</a> pour b\u00e9n\u00e9ficier du plus haut niveau de s\u00e9curit\u00e9 de Chrome</div>",
+                  "target": [
+                    "label > div:nth-child(2)"
+                  ]
+                },
+                {
+                  "html": "<button id=\"primary-button\">Revenir en lieu s\u00fbr</button>",
+                  "target": [
+                    "#primary-button"
+                  ]
+                },
+                {
+                  "html": "<button id=\"details-button\" class=\"secondary-button small-link\" aria-expanded=\"false\">\n        Param\u00e8tres avanc\u00e9s\n      </button>",
+                  "target": [
+                    "#details-button"
+                  ]
+                }
+              ]
+            }
+          ],
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks",
+          "html": "<html dir=\"ltr\" lang=\"fr\">",
+          "impact": "moderate",
+          "none": [],
+          "target": [
+            "html"
+          ]
+        }
+      ],
+      "tags": [
+        "cat.keyboard",
+        "best-practice"
+      ]
+    }
+  ]
+}

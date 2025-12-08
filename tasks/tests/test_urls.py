@@ -1,5 +1,6 @@
 from django.test import TestCase
-from .decorators import tc  # IMPORT RELATIF CORRECT
+# Changeons complètement l'import pour être absolu
+from tasks.tests.decorators import tc  # IMPORT RELATIF CORRECT
 from tasks.models import Task
 
 class URLTests(TestCase):

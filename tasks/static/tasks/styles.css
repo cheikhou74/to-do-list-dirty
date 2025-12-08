@@ -82,3 +82,15 @@ body {
 .priority-high { background: #ffebee; color: #c62828; }
 .priority-medium { background: #fff3e0; color: #ef6c00; }
 .priority-low { background: #e3f2fd; color: #1565c0; }
+
+body { 
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 20px;
+}
+.container {
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
